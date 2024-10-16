@@ -15,12 +15,12 @@
 <style>
  #corpo {display: block;position: relative;margin: 0 auto; width: 100%;max-width: 1600px;box-sizing: border-box; padding: 0; font-family: 'Open Sans', sans-serif; color: #000000;overflow: hidden; background:#FFFFFF; text-align: center;}
  a{text-decoration: none}
- hr{width: 85%;}
+   /* RESET DAS LINHA DIVISORIAS */
+   hr.line-desktop{width: 85%;}
+  /* AJUSTE LINHAS MOBILE */
+  hr.line-mobile{display:none;}
  /* BUTTON SECONDARY DEFAULT */
  .btn-secondary{border:1px solid #333333; padding: 1% 7%; border-radius: 999px; color: #333333; font-size: 1vw; }
- /* CARDO ROOT-DEFAULT */
-.card{width: 23%;height:15vw;background: #D9D9D9; padding: 2%; border-radius:20px; margin-bottom: 2%;}
-.card-mobile{width: 84%;height:54vw;background: #D9D9D9; padding:5%; border-radius:20px; margin-bottom: 2%;}
 /* CHAMADA TOPO */
 #corpo .chamada-topo img{ width:17%; margin:4px auto 0;}
 #corpo .chamada-topo{ text-align: center;}
@@ -29,25 +29,27 @@
 #corpo .texto-topo{width: 80%; margin: 0 auto;}
 #corpo .texto-topo P { font-size:1.4vw; margin:2% auto 0; line-height: 44px;}
 #corpo .texto-topo h2.sub-titulo{ font-size:2.5vw; font-weight:700; margin-top:7%;}
-#corpo .texto-topo P.bold { font-size:1.8vw; font-weight:600;width: 80%; margin: 3% auto;} 
+#corpo .texto-topo P.bold { font-size:1.8vw; font-weight:600;width: 77%; margin: 3% auto;} 
 #corpo  h3{margin-bottom:3%;}
 /* SESSÃO CARDS SERVIÇOS */
-#corpo .container-servicos::before{padding-top: 80%;}
+#corpo .container-servicos::before{padding-top: 80%; padding-bottom:5%;}
 #corpo .container-servicos{width: 90%;margin: 0 auto;}
 #corpo .container-servicos .servicos{display: flex; flex-wrap: wrap;justify-content: center;}
 #corpo .servicos .card-servico{width: 30%; padding-bottom: 5%;}
 #corpo .servicos .card-servico picture{width:50%; display: block; margin: 0 auto;}
 #corpo .servicos .card-servico .text-card-servico p.artista{margin-bottom: 0;}
 #corpo .servicos .card-servico .text-card-servico h2{margin-top:0;font-size:1vw}
-#corpo .servicos .card-servico .text-card-servico h3{width:71%; margin:2% auto; font-size:1vw;line-height: 27px;}
+
+#corpo .servicos .card-servico:nth-child(5) .text-card-servico h3{margin-top: 1vw;}
+#corpo .servicos .card-servico:nth-child(6) .text-card-servico h3{width: 70%;}
+#corpo .servicos .card-servico:nth-child(11) .text-card-servico h3{width: 65%;}
+
+#corpo .servicos .card-servico .text-card-servico h3{width:62%; margin:2% auto; font-size:1vw;line-height: 27px;}
 #corpo .servicos .card-servico .text-card-servico p{font-size:0.9vw; margin-bottom:5%;}
-
-
 /* SOBRE A ARTISTA */
 #corpo .sobre-artista::before{ padding: 0; padding-top: 42.0625%;}  
 #corpo .sobre-artista picture{ width:100%; margin:0 auto; }
 #corpo .sobre-artista h2{ font-size: 1.6vw; margin: 4% auto 2%; font-weight:700;}
-/* #corpo .sobre-artista a{ position: absolute; width: 17%; height:7%; background-color: transparent; bottom: 25%; left: 50%;} */
 /* TEXTO ARTISTAS */
 #corpo .texto-artistas{width: 73%;margin:0 auto; padding-bottom: 5%;}
 #corpo .texto-artistas h3{font-size:1vw;margin-bottom: 0;}
@@ -56,105 +58,83 @@
 #corpo .texto-artistas .button-bottom{width: 30%; margin: 0 auto;}
 /* ----Responsividade media query---- */
 @media screen and (min-width: 1600px){
-  #corpo .beneficios .texto-beneficios-topo {width: 64vw;}
-  #corpo .texto-video h2 {font-size: 29px;}
+  .btn-secondary{font-size:18px;}
+  #corpo .texto-topo{width: 82%;}
+  #corpo .texto-topo P{font-size: 24px;}
 
+
+  /* SESSÃO CARDS SERVIÇOS */
+  #corpo .container-servicos::before {padding-top: 86%;}
+  #corpo .servicos .card-servico .text-card-servico h3{width:278px;font-size:18px;}
+  #corpo .servicos .card-servico:nth-child(9) .text-card-servico h3{margin-top: 2.3vw;}
+  #corpo .servicos .card-servico:nth-child(11) .text-card-servico h3{width: 313px;}
+
+  #corpo .texto-artistas p{font-size:0.9vw;}
 }
 @media screen and (max-width: 1100px) {
-/* LOGO FASTSHOP TOPO */
-#corpo .texto-topo img{ width:34%;}
-/* TEXTO TOPO */
-#corpo .texto-topo P{ font-size:2vw; }
-#corpo .texto-topo h2.sub-titulo{ font-size:4vw; width: 90%; margin: 7% auto 6%; }
-#corpo .texto-topo P.bold{ font-size:2.8vw; width:90%; }
-/* BANNER TOPO */
-#corpo .banner_artista::before { padding-top: 82.0625%;}
-#corpo .banner_artista .texto-artista p,
-#corpo .banner_artista .texto-artista h2{ font-size:3vw;}
-#corpo .banner_artista .texto-artista hr { width: 58%;}
-/* SEÇÃO BENEFICOS CARROSSEL*/
-#corpo .beneficios .texto-beneficios-topo{width: 95%;}
-#corpo .beneficios .texto-beneficios-topo p {font-size:3.2vw;margin:0 auto 2%;}
-#corpo .beneficios h2{font-size:3.2vw;}
-#corpo .beneficios-card .categoria-Mobile1 picture {display:block;width: 90%; margin-left: 5%;}
-#corpo .beneficios-card .categoria-Mobile1 .owl-carousel{width: 46%; margin:0 auto;}
-#corpo .beneficios .categoria-Mobile1 .owl-carousel .owl-stage-outer {margin-left: 3%;}
+  .btn-secondary{font-size:4vw;font-weight:600; padding:3% 35%; }
+  /* RESET DAS LINHA DIVISORIAS */
+  hr.line-desktop{display:none;}
+  /* AJUSTE LINHAS MOBILE */
+  hr.line-mobile{width:100%; margin:12% 0;}
+  /* CHAMADA TOPO */
+  #corpo .chamada-topo img {width:50%;}
+  #corpo .chamada-topo p {width: 90%; font-size:3.4vw;}
+  #corpo .texto-topo{width:87%}
+  #corpo .texto-topo P {font-size: 3.4vw;line-height: 5.5vw; margin-top:5%}
+  #corpo .texto-topo p.texto-complemento{display: none;}
+  #corpo h3{width:93%;font-size:3.4vw;margin:5% auto 0;}
+  #corpo .container-servicos::before {padding-top: 1098%;padding-bottom: 5%;}
+  #corpo .container-servicos{width:95%;}
+  #corpo .container-servicos h3{margin-bottom: 5%;}
+  #corpo .container-servicos .servicos{display:flex; flex-direction:column; align-items:center;}
+/* SESSÃO CARDS SERVIÇOS */
+  #corpo .servicos .card-servico {width: 100%;}
+  #corpo .servicos .card-servico picture{width: 80%;}
+  #corpo .servicos .card-servico .text-card-servico{width:90%; margin:0 auto;}
+  #corpo .servicos .card-servico .text-card-servico p.artista{font-size:3vw}
+  #corpo .servicos .card-servico .text-card-servico h2 {font-size: 3.9vw;}
+  #corpo .servicos .card-servico .text-card-servico h3 {width: 100%;font-size: 3vw;line-height: 5vw;}
+  #corpo .servicos .card-servico .text-card-servico p {font-size: 3vw; margin-bottom:12%;}
+/*AJUSTE TITULO SESSÃO CARDS SERVIÇOS */
+  #corpo .servicos .card-servico span{display:block;}
+  #corpo .servicos .card-servico:nth-child(2) .text-card-servico h3{width: 80%;}
+  #corpo .servicos .card-servico:nth-child(3) .text-card-servico h3{width: 63%;}
+  #corpo .servicos .card-servico:nth-child(4) .text-card-servico h3{width: 60%;}
+  #corpo .servicos .card-servico:nth-child(5) .text-card-servico h3{width: 50%;}
+  #corpo .servicos .card-servico:nth-child(7) .text-card-servico h3{width: 40%;}
+  #corpo .servicos .card-servico:nth-child(9) .text-card-servico h3{width: 40%;}
+  #corpo .servicos .card-servico:nth-child(11) .text-card-servico h3{width: 70%;}
 
-#corpo .beneficios .categoria-Mobile1 .beneficios-card h2{width: 59%;margin: 0 auto;font-size:4vw; font-weight:bold;}
-#corpo .beneficios .categoria-Mobile1 .beneficios-card p{width: 100%; font-size:4vw; margin-top: 7%;}
-#corpo .beneficios .orientacao {font-size: 2.3vw;}
-/* NAVEGAÇÃO DO CARROUSSEL BENEFICIOS E BENEFICIOS SUPORTE*/
-#corpo .categoria-Mobile1 .owl-carousel.owl-drag .owl-item { width:300px; }
-#corpo .categoria-Mobile1 .owl-nav{ width:100%; position: absolute; top:98.3%; display:flex; align-items:center; justify-content:center;}
-#corpo .categoria-Mobile1 .owl-nav .owl-next,
-#corpo .categoria-Mobile1 .owl-nav .owl-prev{ width:50px; height:50px; border-radius:50%; }
-#corpo .categoria-Mobile1 .owl-nav .owl-prev{ position:absolute; left:-15.5vw;}
-#corpo .categoria-Mobile1 .owl-nav .owl-next{ position:absolute;right:-15.5vw ;}
-/* DOTS NAVEGAÇÃO BENEFICIOS E BENEFICIOS SUPORTE*/
-.fast_rotativo_header .owl-dots { display: block; position: relative; margin: 2% auto 10%; width: 45%; text-align: center; }
-.fast_rotativo_header .owl-dots .owl-dot { display: inline-block; position: relative; outline: none;}
-.fast_rotativo_header .owl-dots .owl-dot span { display: block; outline: 1px solid #aaaaaa; width: 8px; height: 8px; margin: 0 5px; border-radius: 250px; }
-.fast_rotativo_header .owl-dots .owl-dot:hover span, .fast_rotativo_header .owl-dots .owl-dot.active span { background-color: #8f8e8e; }
-/* NAVEGAÇÃO DO CARROUSSEL BENEFICIOS E BENEFICIOS SUPORTE*/
-#corpo .categoria-Mobile1 .owl-carousel.owl-drag .owl-item { width: 300px; }
-#corpo .categoria-Mobile1 .owl-nav { width: 35%; position: absolute; top: 99%; left:32%; display: flex; align-items: center; justify-content: center; gap:23%}
-#corpo .categoria-Mobile1 .owl-nav .owl-next,
-#corpo .categoria-Mobile1 .owl-nav .owl-prev { width: 25px; height: 25px; border-radius: 50%; background: #33333378;filter: opacity(0.5);}
-
-/* zurich */
-#corpo .zurich h2 { font-size:3.3vw;}
-#corpo .zurich h3 { font-size: 3.3vw;}
-#corpo .zurich .texto-servico,
-#corpo .zurich .texto-cobertura{ font-size:3.2vw; line-height: 4.9vw}
-#corpo .zurich .texto-servico{ width:77%;}
-#corpo .zurich .texto-cobertura{ width:89%;}
-#corpo .zurich img{ width: 17vw;}
-#corpo .zurich .texto-zurich{ width:90%; font-size:3.2vw; line-height: 4.9vw}
-#corpo .zurich .condicoes{ font-size:2.5vw;}
-/* SEÇÃO VIDEO */
-#corpo .texto-video h2{font-size:3.2vw;}
-
-#corpo .video::before {    padding: 0;    padding-top: 79.0625%;}
-.flex_wrapper .size_wrapper .video_wrapper {        width: 54%;        padding-bottom: 98%;    }
 /* SOBRE A ARTISTA */
-#corpo .sobre-artista::before { padding-top: 113.0625%;}
-#corpo .sobre-artista picture { width: 100%;}
-#corpo .sobre-artista h2 { font-size: 2.7vw;}
-#corpo .sobre-artista a {bottom: 24%;}
-
-
-/* seçao carrossel */
-#corpo .todos-servicos .grupo-servicos { display: flex; width: 100%; margin: 0 auto; gap: 2%; justify-content: space-between;}
-
-/* seçao carrossel footer*/
-#corpo .carroussel-servicos::before { padding-top: 85.0625%; } #corpo .carroussel-servicos .owl-carousel { width: 85%; margin: 0 auto; }
-#corpo .carroussel-servicos .texto-carrossel img { width: 35%; margin-bottom: 1%; }
-#corpo .carroussel-servicos .texto-carrossel h2 { font-size: 6vw; }
-#corpo .carroussel-servicos .texto-carrossel p { font-size: 3vw; margin: 0 auto 6%; }
-#corpo .carroussel-servicos .owl-nav { top: 39%; }
-#corpo .carroussel-servicos .owl-nav .owl-next,
-#corpo .carroussel-servicos .owl-nav .owl-prev { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-}
+#corpo .sobre-artista::before{padding-top: 49.0625%;}
+#corpo .texto-artistas{width: 95%;margin-bottom:10%;}
+ #corpo .sobre-artista h2{font-size: 3.4vw; margin-bottom:5%;}
+ #corpo .texto-artistas h3{font-size:3.4vw;margin-bottom: 0;}
+#corpo .texto-artistas img{width: 50%;}
+#corpo .texto-artistas p{font-size:3.4vw;line-height: 6vw; margin-bottom:10%;}
+#corpo .texto-artistas .button-bottom{width: 100%; margin-bottom: 10%;}
+ }
 
 </style>
 <!-- INICIO LP -->
 <div id="corpo">
     <div class="chamada-topo">
-        <img src="https://fastshopwr-a.akamaihd.net/pages/2024/06/files_lp_05/image-logo-fast-shop.png" alt="" srcset="">
+        <img src="https://conteudoespecial.fastshop.com.br/vtex/lps/fast-cuida/home/img/logo_fast_shop.png" alt="" srcset="">
         <p>Em todos os momentos<br> um serviço que cuida de você.</p>
     </div>
 
     <!-- TEXTO-TOPO -->
   
       <div class="texto-topo">
-          <p class="texto-inicio">Aqui na Fast, acreditamos que é por meio dos pequenos cuidados que se constroem as relações de confiança e as<br> histórias especiais com que estamos juntos.
+          <p class="texto-inicio">Aqui na Fast, acreditamos que é por meio dos pequenos cuidados que se constroem as relações de confiança e as histórias especiais com que estamos juntos.
           </p>
           <p class="texto-complemento">
             Apuramos nossos olhares atentos aos detalhes, colocando em prática todos os dias a filosofia herdada de nossos<br> ancestrais japoneses, o <strong>omotenashi: cuidar de todo o coração.</strong></p>
           </div>
          <h3>Conheça nossos serviços e encontre um cuidado para cada momento da sua vida.</h3>
     
-      <hr>
+      <hr class="line-desktop">
       <!-- SESSÃO CARDS SERVIÇOS -->
       <div class="wrapper-aspect-ratio container-servicos">
        <div class="inner">
@@ -164,110 +144,115 @@
               <div class="card-servico">
                 <picture>
                       <!-- <source media="(max-width: 1100px)" srcset="https://fastshopwr-a.akamaihd.net/pages/2024/06/files_lp_05/sobre-artista-mobile.png"> -->
-                      <img width="100%" height="auto" src="files/servico-instalacao.png" alt="banner artista Arte por Camila Teshima">
+                      <img width="100%" height="auto" src="https://conteudoespecial.fastshop.com.br/vtex/lps/fast-cuida/home/img/servico-instalacao.png" alt="banner artista Arte por Camila Teshima">
                 </picture>
                 <div class="text-card-servico">
                   <p class="artista">Arte por</p>
                   <h2>Camila Teshima</h2>
-                  <h3>Cuidar é: Instalar e Ensinar<br>
+                  <h3><span>Cuidar é:</span> Instalar e Ensinar
                     sobre o uso</h3>
                   <p>Instalação e orientação de uso</p>
                 </div>
-                  <a class="btn-secondary" href="https://www.fastshop.com.br/web/a/fast_cuida_colaboracoes">Saiba mais</a>    
+                  <a class="btn-secondary" href="https://site.fastshop.com.br/fast_cuida_instalacao">Saiba mais</a>    
               </div>
+              <hr class="line-mobile">
               <!-- CARD 02 -->
               <div class="card-servico">
                 <picture>
                       <!-- <source media="(max-width: 1100px)" srcset="https://fastshopwr-a.akamaihd.net/pages/2024/06/files_lp_05/sobre-artista-mobile.png"> -->
-                      <img width="100%" height="auto" src="files/servico-seguro.png" alt="banner artista Arte por Marcelo Colmenero">
+                      <img width="100%" height="auto" src="https://conteudoespecial.fastshop.com.br/vtex/lps/fast-cuida/home/img/servico-seguro.png" alt="banner artista Arte por Marcelo Colmenero">
                 </picture>
                 <div class="text-card-servico">
                   <p class="artista">Arte por</p>
                   <h2>Marcelo Colmenero</h2>
-                  <h3>Cuidar é: Oferecer  segurança<br> nos momentos inesperados</h3>
+                  <h3><span>Cuidar é:</span>  Oferecer  segurança nos momentos inesperados</h3>
                   <p>Seguro Contra Roubo</p>
                 </div>
-                  <a class="btn-secondary" href="https://www.fastshop.com.br/web/a/fast_cuida_colaboracoes">Saiba mais</a>    
+                  <a class="btn-secondary" href="https://site.fastshop.com.br/fast_cuida_seguro">Saiba mais</a>    
               </div>
+              <hr class="line-mobile">
               <!-- CARD 03 -->
               <div class="card-servico">
                 <picture>
                       <!-- <source media="(max-width: 1100px)" srcset="https://fastshopwr-a.akamaihd.net/pages/2024/06/files_lp_05/sobre-artista-mobile.png"> -->
-                      <img width="100%" height="auto" src="files/servico-garantia-estendida.png" alt="banner artista Arte por Camila Mizutani">
+                      <img width="100%" height="auto" src="https://conteudoespecial.fastshop.com.br/vtex/lps/fast-cuida/home/img/servico-garantia-estendida.png" alt="banner artista Arte por Camila Mizutani">
                 </picture>
                 <div class="text-card-servico">
                   <p class="artista">Arte por</p>
                   <h2>Camila Mizutani</h2>
-                  <h3>Cuidar é: Garantir mais tempo<br> com o que funciona bem</h3>
+                  <h3><span>Cuidar é:</span>  Garantir mais tempo com o que funciona bem</h3>
                   <p>Garantia Estendida</p>
                 </div>
-                  <a class="btn-secondary" href="https://www.fastshop.com.br/web/a/fast_cuida_colaboracoes">Saiba mais</a>    
+                  <a class="btn-secondary" href="https://site.fastshop.com.br/fast_cuida_garantia">Saiba mais</a>    
               </div>
+              <hr class="line-mobile">
               <!-- CARD 04 -->
               <div class="card-servico">
                 <picture>
                       <!-- <source media="(max-width: 1100px)" srcset="https://fastshopwr-a.akamaihd.net/pages/2024/06/files_lp_05/sobre-artista-mobile.png"> -->
-                      <img width="100%" height="auto" src="files/servico-suporte-tecnico.png" alt="banner artista Arte por Cahro Naka">
+                      <img width="100%" height="auto" src="https://conteudoespecial.fastshop.com.br/vtex/lps/fast-cuida/home/img/servico-suporte-tecnico.png" alt="banner artista Arte por Cahro Naka">
                 </picture>
                 <div class="text-card-servico">
                   <p class="artista">Arte por</p>
                   <h2>Cahro Naka</h2>
-                  <h3>Cuidar é: Configurar e deixar<br> pronto para usar </h3>
+                  <h3><span>Cuidar é:</span> Configurar e deixar pronto para usar </h3>
                   <p>Suporte Técnico</p>
                 </div>
-                  <a class="btn-secondary" href="https://www.fastshop.com.br/web/a/fast_cuida_colaboracoes">Saiba mais</a>    
+                  <a class="btn-secondary" href="https://site.fastshop.com.br/fast_cuida_suporte">Saiba mais</a>    
               </div>
+              <hr class="line-mobile">
               <!-- CARD 05 -->
               <div class="card-servico">
                 <picture>
                       <!-- <source media="(max-width: 1100px)" srcset="https://fastshopwr-a.akamaihd.net/pages/2024/06/files_lp_05/sobre-artista-mobile.png"> -->
-                      <img width="100%" height="auto" src="files/servico-apple-care.png" alt="banner artista Arte por Marcelo Colmenero">
+                      <img width="100%" height="auto" src="https://conteudoespecial.fastshop.com.br/vtex/lps/fast-cuida/home/img/servico-apple-care.png" alt="banner artista Arte por Marcelo Colmenero">
                 </picture>
                 <div class="text-card-servico">
                   <!-- <p class="artista">Arte por</p>
                   <h2>Camila Teshima</h2> -->
                   <br><br><br>
-                  <h3>Cuidar é: Instalar e Ensinar<br> sobre o uso</h3>
+                  <h3><span>Cuidar é:</span> Instalar e Ensinar sobre o uso</h3>
                   <p>Instalação e Orientação de uso</p>
                 </div>
-                  <a class="btn-secondary" href="https://www.fastshop.com.br/web/a/fast_cuida_colaboracoes">Saiba mais</a>    
+                  <a class="btn-secondary" href="https://site.fastshop.com.br/apple-care">Saiba mais</a>    
               </div>
+              <hr class="line-mobile">
               <!-- CARD 06 -->
               <div class="card-servico">
                 <picture>
                       <!-- <source media="(max-width: 1100px)" srcset="https://fastshopwr-a.akamaihd.net/pages/2024/06/files_lp_05/sobre-artista-mobile.png"> -->
-                      <img width="100%" height="auto" src="files/servico-instalacao.png" alt="banner artista Arte por Marcelo Colmenero">
+                      <img width="100%" height="auto" src="https://conteudoespecial.fastshop.com.br/vtex/lps/fast-cuida/home/img/servico-casa-inteligente.png" alt="banner artista Arte por Marcelo Colmenero">
                 </picture>
                 <div class="text-card-servico">
                   <p class="artista">Arte por</p>
                   <h2>Arthur Ortega</h2>
-                  <h3>Cuidar é: Conectar a sua casa<br>
+                  <h3><span>Cuidar é:</span> Conectar a sua casa
                     ao seu estilo de vida Casa Inteligente</h3>
                   <p>Casa Inteligente</p>
                 </div>
-                  <a class="btn-secondary" href="https://www.fastshop.com.br/web/a/fast_cuida_colaboracoes">Saiba mais</a>    
+                  <a class="btn-secondary" href="https://site.fastshop.com.br/casa_inteligente">Saiba mais</a>    
               </div>
-          
+              <hr class="line-mobile">
          </div>
       </div>
     </div>
-    <hr>
+    <hr class="line-desktop">
    <!-- SESSÃO ARTISTAS -->
       <div class="wrapper-aspect-ratio sobre-artista">
         <picture class="inner">
-            <h2>Sobre o artista</h2>
+            <h2>Nossos Artistas</h2>
             <!-- <source media="(max-width: 1100px)" srcset="https://fastshopwr-a.akamaihd.net/pages/2024/06/files_lp_05/sobre-artista-mobile.png"> -->
-            <img width="100%" height="auto" src="files/imagem_grupo_artistas.png" alt="banner artista Arte por Marcelo Colmenero">
+            <img width="100%" height="auto" src="https://conteudoespecial.fastshop.com.br/vtex/lps/fast-cuida/home/img/imagem_grupo_artistas.png" alt="banner artista Arte por Marcelo Colmenero">
         </picture>   
         <a href="https://www.fastshop.com.br/web/a/fast_cuida_colaboracoes"></a>    
     </div>
     <div class="texto-artistas">
       <h3>Omotenashi + Arte + Cuidados =
       </h3>
-      <img src="files/logo_fast_shop.png" alt="logo Fast Shop">
+      <img src="https://conteudoespecial.fastshop.com.br/vtex/lps/fast-cuida/home/img/logo_fast_shop.png" alt="logo Fast Shop">
       <p>Emprestamos os olhares de seis artistas para expressar 6 valores Omotenashi,  no qual temos muito orgulho em colocá-los em prática ao longo desses últimos 38 anos de história. Cada um desses seis artistas também utilizou a sua arte para ensinar um valor Omotenashi para as próximas gerações, assim como faziam os nossos ancestrais. Assim como faz a Fast Shop.</p>
       <div class="button-bottom">
-        <a class="btn-secondary" href="#">Saiba mais</a>
+        <a class="btn-secondary" href="https://www.fastshop.com.br/web/a/fast_cuida_colaboracoes">Saiba mais</a>
       </div>
     </div>
      
